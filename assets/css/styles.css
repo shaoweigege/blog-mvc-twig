@@ -1,0 +1,42 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 60px;
+}
+#wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+header .row {
+	justify-content: space-between;
+}
+.site-footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	max-width: 1200px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #a9e598
+}
+
+.site-header{
+	background-color: #a9e598;
+	padding: 10px 0;
+}
+
+.site-nav{
+	background-color: #eee;
+	padding: 5px 0;
+}
+
+.site-content{
+	padding: 10px 0;
+}
+.card {
+	border: none !important;
+}

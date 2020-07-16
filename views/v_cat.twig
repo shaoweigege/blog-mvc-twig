@@ -1,0 +1,31 @@
+{#{% if( user ) %}#}
+{#    <div class="d-flex mb-3 mt-3 flex-row-reverse">#}
+{#<!--        <a class="btn btn-primary" href="--><?//=ROOT?><!--add">Add post</a>-->#}
+{#        <a class="btn btn-danger" href="{{ constant('ROOT') }}exit">Exit</a>#}
+{#    </div>#}
+
+{#{% endif %}#}
+
+{#<p>Рубрика - <strong><a href="{{ constant('ROOT') }}catpost/{{ cat.id_cat }}">{{ cat.name }}</a></strong></p>#}
+
+<div class="card">
+
+        {% if news|length > 0 %}
+            {% for new in news %}
+                <div class=\"card-body\">
+                    {% if( user ) %}
+                        <div class="card-title">{{ new.title }}</div>
+                        <a class="btn btn-outline-secondary mr-5" href="{{ constant('ROOT') }}post/{{ new.id_new }}">Read more</a>
+                        <a class="btn btn-success" href="{{ constant('ROOT') }}post/edit/{{ new.id_new }}">Edit</a>
+
+                    {% else %}
+                        <div class="card-title">{{ new.title }}</div>
+                        <a class="btn btn-outline-secondary mr-5" href="{{ constant('ROOT') }}post/{{ new.id_new }}">Read more</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+                    <p>There are no articles yet.</p>
+        {% endif %}
+
+</div>

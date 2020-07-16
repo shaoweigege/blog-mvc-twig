@@ -1,0 +1,8 @@
+{% if( user ) %}
+    <ul class="list-group">
+        <li class="list-group-item"><a class="btn btn-success" href="{{ constant('ROOT') }}post/edit/{{ id_new }}">Edit</a></li>
+        <li class="list-group-item"><a class="btn btn-success" href="{{ constant('ROOT') }}post/edit/{{ id_new }}">Delete</a></li>
+    </ul>
+{% else %}
+    <div>To edit article please log in</div>
+{% endif %}

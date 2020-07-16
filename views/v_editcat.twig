@@ -1,0 +1,17 @@
+
+<form method="post">
+    <div class="form-group">
+        <label for="title">Category name</label>
+        <input class="form-control mb-3" type="text" name="titleCat" value="{{ titleCat }}">
+        <button class="btn btn-primary" type="submit" value="Edit" name="editCat">Edit</button>
+        <button class="btn btn-secondary" type="submit" value="Cancel" name="resetCat">Cancel</button>
+        <button class="btn btn-danger" type="submit" value="Delete" name="deleteCat">Delete</button>
+        <div class="form-check mt-3 mb-3">
+            <input type="checkbox" class="form-check-input" value="yes" name="deleteAgree">
+            <label class="{{ delete }} form-check-label" for="deleteAgree">Realy delete?</label>
+        </div>
+    </div>
+</form>
+<div>
+    {{ msg }}
+</div>

@@ -1,0 +1,23 @@
+<div class="h3">Categories</div>
+<ul class="list-group">
+    {% for category in allCat %}
+        {% if( user ) %}
+            {% if category.id_cat != cat.id_cat %}
+                <li class="list-group-item d-flex justify-content-between"><a href="{{ constant('ROOT') }}category/{{ category.id_cat }}">{{ category.name }}</a>
+                    <a class="btn btn-success w-25" href="{{ constant('ROOT') }}category/edit/{{ category.id_cat }}">Edit</a>
+                </li>
+            {% else %}
+                <li class="list-group-item d-flex justify-content-between"><strong><a href="{{ constant('ROOT') }}category/{{ category.id_cat }}">{{ category.name }}</a></strong>
+                    <a class="btn btn-success w-25" href="{{ constant('ROOT') }}category/edit/{{ category.id_cat }}">Edit</a>
+                </li>
+            {% endif %}
+
+        {% else %}
+            {% if category.id_cat != cat.id_cat %}
+                <li class="list-group-item"><a href="{{ constant('ROOT') }}category/{{ category.id_cat }}">{{ category.name }}</a></li>
+            {% else %}
+                <li class="list-group-item"><strong><a href="{{ constant('ROOT') }}category/{{ cat.id_cat }}">{{ cat.name }}</a></strong></li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</ul>

@@ -1,0 +1,21 @@
+<form method="post">
+    <div class="form-group">
+        <label for="login">Login</label>
+        <input class="form-control" type="text" name="login">
+        <label for="password">Password</label>
+        <input class="form-control" type="text" name="password">
+        <div class="form-check mt-3 mb-3">
+            <input type="checkbox" class="form-check-input" name="remember">
+            <label class="form-check-label" for="remember">Remember</label>
+        </div>
+
+        <button class="btn btn-primary" type="submit" value="Submit">Log In</button>
+    </div>
+
+{% if(authErr) %}
+<div class="alert alert-danger">
+    Error! No such user or password. Please try again!
+</div>
+{% endif %}
+
+</form>

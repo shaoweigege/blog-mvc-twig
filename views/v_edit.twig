@@ -1,0 +1,31 @@
+<form method="post">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" name="title" value="{{ new_content.title }}">
+        <label for="content">Content</label>
+        <textarea class="form-control" name="content">{{ new_content.content }}</textarea>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" name="category">
+                {% for category in new_cat %}
+                    {% if category.id_cat != cat %}
+                        <option value="{{ category.id_cat }}">{{ category.name }}</option>
+                    {% else %}
+                        <option selected value="{{ category.id_cat }}">{{ category.name }}</option>
+                    {% endif %}
+
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit" value="Edit" name="editArticle">Edit</button>
+        <button class="btn btn-secondary" type="submit" value="Cancel" name="resetArticle">Cancel</button>
+        <button class="btn btn-danger" type="submit" value="Delete" name="deleteArticle">Delete</button>
+        <div class="form-check mt-3 mb-3">
+            <input type="checkbox" class="form-check-input" value="yes" name="deleteAgree">
+            <label class="{{ delete }} form-check-label" for="deleteAgree">Realy delete?</label>
+        </div>
+    </div>
+</form>
+<div>
+    {{ msg }}
+</div>
